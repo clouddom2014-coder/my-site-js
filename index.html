@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій персональний сайт</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* Хедер (Шапка сайту) */
+        header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Головний контейнер для трьох колонок */
+        .main-container {
+            display: flex;
+            flex: 1;
+            max-width: 1400px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        /* Бокові панелі для відео */
+        .video-sidebar {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+        .video-sidebar h3 {
+            color: #007bff;
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            background: #eee;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Центральна картка з інформацією */
+        .main-card {
+            flex: 2;
+            max-width: 700px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #007bff;
+            margin-bottom: 15px;
+        }
+        .main-card h2 {
+            color: #007bff;
+            margin-top: 0;
+        }
+        .about-text {
+            text-align: left;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .hobby-box {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #007bff;
+            text-align: left;
+        }
+
+        /* Сітка для блоків-робіт */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        /* Інтерактивний блок-картка */
+        .work-block {
+            display: block;
+            background: #f8f9fa;
+            color: #333;
+            text-decoration: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            border-top: 4px solid #007bff;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        /* Ефект підведення курсору */
+        .work-block:hover {
+            background: #ffffff;
+            border-top-color: #0056b3;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0,123,255,0.15);
+        }
+
+        .work-block span {
+            display: block;
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+
+        /* Футер сайту */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 900px) {
+            .main-container {
+                flex-direction: column;
+            }
+            .video-sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Веб-простір Артема</h1>
+        <nav>
+            <a href="#about">Про мене</a>
+            <a href="#hobby">Хобі</a>
+            <a href="#works">Мої роботи</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        
+        <aside class="video-sidebar">
+            <h3>📺Моя улюбленна гра (трейлер)</h3>
+            <div class="video-wrapper">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/8J3NJveJudM?si=ZZDIpmFRWE9if3lD"></iframe>
+            </div>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; text-align: center;" p>
+        </aside>
+
+        <main class="main-card">
+            <img src="photo_2026-05-21_21-29-08.jpg" alt="фото" class="profile-img">
+
+            <h2 id="about">Привіт, я Артем!</h2>
+            
+            <div class="about-text">
+                <p>Вітаю на моєму першому персональному сайті-портфоліо! Я активно вивчаю <strong>веб-розробку та комп'ютерну графіку</strong>. Мені подобається створювати щось нове своїми руками — чи то код для сторінки, чи то цифрові малюнки.</p>
+                <p>Цей сайт — мій особистий щоденник успіху, де я збираю вивчені технології, експериментую зі стилями CSS та HTML-розміткою. Крім комп'ютерних технологій, я люблю проводити час активно та відкривати нові горизонти.</p>
+            </div>
+
+            <div class="hobby-box" id="hobby">
+                <h3>🚴‍♂️ Моє улюблене хобі</h3>
+                <p>Я дуже люблю кататися на велосипеді! Це не просто хобі, а крутий спосіб відпочити, розігнатися на повну швидкість, досліджувати нові місця та тренувати витривалисть. Кожна поїздка — це маленька пригода.</p>
+            </div>
+
+            <h3 id="works" style="margin-top: 30px;">📂 Мої проекти та практичні (Клацни, щоб відкрити):</h3>
+            
+            <div class="works-grid">
+                
+                <a href="Js1.html" target="_blank" class="work-block">
+                     1. Моя перша робота
+                    <span>Файл: Js1.html.</span>
+                </a>
+
+                <a href="js2.html" target="_blank" class="work-block">
+                    2. Вячеслав земля
+                    <span>Файл: Js2.html.</span>
+                </a>
+
+                <a href="Js3.html" target="_blank" class="work-block">
+                     3. Де є життя там є надія
+                    <span>Файл: Js3.html.</span>
+                </a>
+
+        </main>
+
+        <aside class="video-sidebar">
+            <h3>🎬 Мій улюбленний серіал🎬</h3>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/XO310x_bRys?si=P_Cf37g_5V9wZGu0" allowfullscreen></iframe>
+            </div>
+            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; text-align: center;"></p>
+        </aside>
+
+    </div>
+
+</body>
+</html>
